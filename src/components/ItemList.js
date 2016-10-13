@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import Pagination from './pagination';
 
 import Item from './item';
@@ -15,7 +14,6 @@ class ItemList extends React.Component {
     }
 
 	render(){
-        console.log(this.state.currentPage)
         return(
             <div>
                 {
@@ -34,8 +32,7 @@ class ItemList extends React.Component {
         currentPage=(currentPage?currentPage:0);
         console.log(currentPage)
         let url='http://localhost:4100/contentlist?_limit='+limit+'&_start='+currentPage*limit;
-        console.log(url)
-        //http://localhost:4100/contentlist?_limit='+limit&"_start="+limit*currentPage
+        
         fetch(url)
           .then((response) => 
              response.json()
@@ -47,4 +44,4 @@ class ItemList extends React.Component {
     }
 };
 
-module.exports=ItemList;
+export default ItemList;
