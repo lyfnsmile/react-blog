@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Pagination from './pagination.jsx';
+import Pagination from './pagination';
 
-import Item from './item.jsx';
+import Item from './item';
 
 class ItemList extends React.Component {
     

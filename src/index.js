@@ -1,3 +1,4 @@
+import react from 'react';
 import {render} from 'react-dom';
 import { Router, Route, browserHistory, IndexRoute} from 'react-router';
 import { createStore } from 'redux';
@@ -17,7 +18,6 @@ import NoMatch from './components/nomatch';
 
 //引入样式文件
 
-import 'bootstrap';
 import './style/style.css';
 
 import reducers from './reducers/reducers';
