@@ -1,0 +1,13 @@
+.nomatch{
+	width: 80%;
+	margin: 30px auto;
+}
+
+.nomatch p{
+	text-align: center;
+	color: #333;
+	font-size: 16px;
+}
+.notfound{
+	color: #e00;
+}
