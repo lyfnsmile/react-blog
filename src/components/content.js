@@ -27,22 +27,6 @@ class Content extends Component{
 
     componentDidMount(){
 
-        const id = this.props.params.id;
-        var xhr = new XMLHttpRequest();
-        xhr.onreadystatechange = function() { //先绑定事件后再open
-            if (xhr.readyState === 4 && xhr.status === 200) {
-                
-                var data=JSON.parse(xhr.responseText);
-                console.log(data.contents)
-                this.setState({data: data.contents[0]});
-            }
-
-        }.bind(this);
-
-        xhr.open("get", "http://localhost:3000/contents/"+id, true);
-
-        //设置请求头的相关参数
-        xhr.send();
         
     }
 }

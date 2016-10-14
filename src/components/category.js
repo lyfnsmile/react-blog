@@ -1,8 +1,7 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+import React,{Component} from 'react';
 import { Link } from 'react-router';
 
-class Category extends React.Component{
+class Category extends Component{
 	render(){
 		return(
 			<div className="widget">

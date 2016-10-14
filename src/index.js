@@ -1,9 +1,7 @@
 import React from 'react';
 import {render} from 'react-dom';
 import { Router, Route, browserHistory, IndexRoute} from 'react-router';
-import { createStore } from 'redux';
 import { Provider } from 'react-redux';
-import _ from 'lodash';
 
 import App from './app';
 import Content from './components/content';

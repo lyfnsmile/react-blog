@@ -14,9 +14,12 @@ function selectedUser(state = 'lyfnsmile', action) {
 function posts(state = {}, action) {
   switch (action.type) {
     case REQUEST_POSTS:
-      return Object.assign({}, state)
+      return Object.assign({}, state,{
+        isFetching: true,
+      })
     case RECEIVE_POSTS:
       return Object.assign({}, state, {
+        isFetching: false,
         data: action.data,
         lastUpdated: action.receivedAt
       })
