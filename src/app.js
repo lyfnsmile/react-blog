@@ -8,7 +8,6 @@ import Category from './components/category';
 import Footer from './components/footer';
 import ItemList from './components/itemList';
 
-
 import {fetchPostsIfNeeded} from './actions/action'
 
 //引入样式文件
@@ -28,8 +27,7 @@ class App extends Component {
           <div id="layout" className="pure-g">
             <div className="pure-u-1 pure-u-md-3-4">
               <div className="content_container">
-              
-                  <ItemList eventsList={posts} />
+                <ItemList eventsList={posts} />
                 
               </div>
             </div>

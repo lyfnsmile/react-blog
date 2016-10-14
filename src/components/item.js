@@ -9,7 +9,6 @@ class Item extends React.Component {
     }
 
 	render(){
-        console.log(this.props,234234)
 		return (
 			<div className="post">
                 <h2 className="post-title"><a href={this.props.data.actor.url}>{this.props.data.actor.url}</a></h2>
