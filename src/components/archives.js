@@ -23,8 +23,8 @@ class Archives extends React.Component {
 	            </div>
 	            <nav className="page-navigator">
 		            <span className="page-number current">1</span>
-		            <a className="page-number" href="/archives/page/2/">2</a>
-		            <a className="extend next" rel="next" href="/archives/page/2/">下一页</a>
+		            <Link className="page-number" to="/archives/page/2/">2</Link>
+		            <Link className="extend next" rel="next" to="/archives/page/2/">下一页</Link>
 	            </nav>
             </div>
 		)

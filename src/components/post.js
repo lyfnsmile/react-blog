@@ -3,8 +3,6 @@
 //表单组件
 
 import React from 'react';
-import {findDOMNode} from 'react-dom';
-import {Link} from 'react-router';
 
 class Post extends React.Component {
 
@@ -47,14 +45,14 @@ class Post extends React.Component {
 		return (
 			<form role="form" id="post" style={style}>
 				<div className="form-group">
-			        <label className="sr-only" htmlFor="title" className="col-sm-2">标题</label>
+			        <label className="sr-only col-sm-2" htmlFor="title">标题</label>
 			        <input type="text" className="form-control col-sm-10" id="title" ref="title"
-			         placeholder="请输入标题" value={this.state.title} onChange={this.handlerChange.bind(this)} />
+			         placeholder="请输入标题" defaultValue={this.state.title} onChange={this.handlerChange.bind(this)} />
 			    </div>
 			    <div className="form-group">
-			        <label className="sr-only" htmlFor="tags" className="col-sm-2">标签</label>
+			        <label className="sr-only col-sm-2" htmlFor="tags">标签</label>
 			        <input type="text" className="form-control col-sm-10" id="tags" ref="tags"
-			         placeholder="文章标签" value={this.state.tags} onChange={this.handlerChange.bind(this)} />
+			         placeholder="文章标签" defaultValue={this.state.tags} onChange={this.handlerChange.bind(this)} />
 			    </div>
 			    <div className="form-group">
 			    	<label htmlFor="name" className="col-sm-2">文本框</label>
@@ -71,17 +69,6 @@ class Post extends React.Component {
 
 
     handleSubmit(){
-    	//获取当前提交时间
-    	let date=new Date().getTime();
-
-        //完成注册逻辑，暂时先不做有效性校验
-        let send={
-            "title":this.state.title,
-            "content":this.state.content,
-            "date":date,
-            "tags":this.state.tags
-        };
-
 
     }
 };

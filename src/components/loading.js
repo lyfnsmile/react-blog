@@ -4,9 +4,6 @@ import '../style/loading.css';
 
 class Loading extends React.Component {
     
-  constructor(props) {
-      super(props);
-  }
 
 	render(){
 

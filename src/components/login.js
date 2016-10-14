@@ -58,10 +58,6 @@ class Login extends React.Component {
         console.log(findDOMNode(this.refs.email),this.state);
 
         //完成注册逻辑，暂时先不做有效性校验
-        let send={
-            "email":this.state.email,
-            "password":this.state.password
-        };
 
 
    }

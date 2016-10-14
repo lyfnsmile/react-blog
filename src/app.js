@@ -13,22 +13,15 @@ import {fetchPostsIfNeeded} from './actions/action'
 //引入样式文件
 class App extends Component {
 
-  constructor(props){
-        super(props);
-    }
-
 	render(){	
-    const {dispatch,selectedUser,posts}=this.props;
-
-    
+    const {posts}=this.props;    
       return (
         <div>
           <Header />
           <div id="layout" className="pure-g">
             <div className="pure-u-1 pure-u-md-3-4">
               <div className="content_container">
-                <ItemList eventsList={posts} />
-                
+                <ItemList eventsList={posts} />                
               </div>
             </div>
             <div className="pure-u-1-4">
@@ -47,14 +40,13 @@ class App extends Component {
 	}
 
   componentDidMount(){
-      const {dispatch,selectedUser}=this.props;
+      const {dispatch,selectedUser}=this.props
       dispatch(fetchPostsIfNeeded(selectedUser))
   }
 }
 
 
 function mapStateToProps(state) {
-  console.log(state)
   const { selectedUser, posts } = state
 
   posts.data=posts.data||[]

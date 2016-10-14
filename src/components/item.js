@@ -1,19 +1,14 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import { Router, Route, Link, browserHistory } from 'react-router';
+import { Link } from 'react-router';
 
 class Item extends React.Component {
-    
-	constructor(props) {
-        super(props);
-    }
+
 
 	render(){
 		return (
 			<div className="post">
-                <h2 className="post-title"><a href={this.props.data.actor.url}>{this.props.data.actor.url}</a></h2>
-                
-                
+                <h2 className="post-title"><Link to={this.props.data.actor.url}>{this.props.data.actor.url}</Link></h2>
+                               
             </div>
 		)
 	}

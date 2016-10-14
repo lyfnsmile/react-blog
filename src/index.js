@@ -8,7 +8,6 @@ import Content from './components/content';
 import ItemList from './components/itemList';
 import Archives from './components/archives';
 import About from './components/about';
-import Photography from './components/photography';
 import Login from './components/login';
 import Register from './components/register';
 import Post from "./components/post";
@@ -32,7 +31,6 @@ render(
 		        <Route path="/about" component={About} /> 
 		        <Route path="/archives" component={Archives} /> 
 		        <Route path="/content" component={Content} />
-		        <Route path="/photography" component={Photography} />
 		        <Route path="/content/:id" component={Content} />      
 		    </Route>
 		    <Route path="/login" component={Login} />

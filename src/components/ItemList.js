@@ -1,21 +1,12 @@
 import React from 'react';
-import Pagination from './pagination';
 
 import Item from './item';
 import Loading from './loading';
 
 class ItemList extends React.Component {
-    
-  constructor(props) {
-      super(props);
-  }
 
 	render(){
-
     const {eventsList}=this.props;
-    console.log(this.props,324)
-
-
     return(
       <div>
         {
@@ -30,7 +21,6 @@ class ItemList extends React.Component {
       </div>                                
     )
 	}
-
 };
 
 export default ItemList;
