@@ -28,4 +28,4 @@ class ItemList extends React.Component {
   }
 };
 
-module.exports=ItemList;
+exports default ItemList;

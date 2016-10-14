@@ -1,4 +1,4 @@
-import react from 'react';
+import React from 'react';
 import {render} from 'react-dom';
 import { Router, Route, browserHistory, IndexRoute} from 'react-router';
 import { createStore } from 'redux';
@@ -7,7 +7,7 @@ import _ from 'lodash';
 
 import App from './app';
 import Content from './components/content';
-import ItemList from './components/ItemList';
+import ItemList from './components/itemList';
 import Archives from './components/archives';
 import About from './components/about';
 import Photography from './components/photography';
@@ -20,9 +20,11 @@ import NoMatch from './components/nomatch';
 
 import './style/style.css';
 
-import reducers from './reducers/reducers';
+import configureStore from './stores/configureStore';
 
-let store = createStore(reducers);
+let store = configureStore();
+
+console.log(store)
 
 render(	
 	<Provider store={store}>

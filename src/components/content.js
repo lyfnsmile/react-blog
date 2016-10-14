@@ -28,7 +28,6 @@ class Content extends Component{
     componentDidMount(){
 
         const id = this.props.params.id;
-
         var xhr = new XMLHttpRequest();
         xhr.onreadystatechange = function() { //先绑定事件后再open
             if (xhr.readyState === 4 && xhr.status === 200) {

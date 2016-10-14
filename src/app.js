@@ -1,11 +1,11 @@
-import {Component} from 'react';
+import React,{Component} from 'react';
+import { connect } from 'react-redux';
 
 import Header from './components/header';
 import Search from './components/search';
 import Tag from './components/tag';
 import Category from './components/category';
 import Footer from './components/footer';
-
 
 
 //引入样式文件
@@ -33,7 +33,17 @@ class App extends Component {
       </div>
 		)
 	}
+
+  componentDidMount(){
+      
+  }
 }
 
 
-export default App;
+function mapStateToProps(state) {
+  const { selectedReddit, postsByReddit } = state
+  
+}
+
+export default connect(mapStateToProps)(App)
+
