@@ -12,34 +12,26 @@ class Header extends React.Component {
 
 	render(){
 		return (
-			<div>
+			<div className="col-md-10 col-md-offset-1">
 				<div id="header">
-		            <div className="site-name">
-		                <h1 className="hidden">{this.state.data.user}</h1><Link id='logo' to="/">{this.state.data.user}</Link>
-		                <p className="description">{this.state.data.subTitle}</p>
-		            </div>
-		            <div id="nav-menu">
-		            	<IndexLink to="/" activeClassName="current"><i className="fa fa-home">首页</i></IndexLink>
-		            	<IndexLink to="/archives/" activeClassName="current"><i className="fa fa-archive"> 归档</i></IndexLink>
-		            	<IndexLink to="/photography/" activeClassName="current"><i className="fa fa-picture-o"> photography</i></IndexLink>
-		            	<IndexLink to="/about/" activeClassName="current"><i className="fa fa-user"> 关于</i></IndexLink>
-		            </div>
-		        </div>
-	        </div>
+          <div className="site-name">
+              <h1>{this.state.data.user}</h1><Link id='logo' to="/">风不息</Link>
+              <p className="description">风不息的前端笔记</p>
+          </div>
+          <div id="nav-menu">
+          	<IndexLink to="/" activeClassName="current"><i className="glyphicon glyphicon-plus">首页</i></IndexLink>
+          	<IndexLink to="/archives/" activeClassName="current"><i className="fa fa-archive"> 归档</i></IndexLink>
+          	<IndexLink to="/photography/" activeClassName="current"><i className="fa fa-picture-o"> photography</i></IndexLink>
+          	<IndexLink to="/about/" activeClassName="current"><i className="fa fa-user"> 关于</i></IndexLink>
+          </div>
+        </div>
+      </div>
 		)
 	}
 
 	componentDidMount(){
-
-        fetch('http://localhost:3000/getInfo')
-		  .then((response) => 
-			 response.json()
-		  ).then((json) => 
-			 this.setState({data: json})
-		  ).catch((ex) =>
-		    console.log('parsing failed', ex)
-		  )        
-    }
+     
+  }
 };
 
 export default Header;

@@ -18,13 +18,13 @@ class App extends Component {
       return (
         <div>
           <Header />
-          <div id="layout" className="pure-g">
-            <div className="pure-u-1 pure-u-md-3-4">
+          <div id="layout" className="pure-g container">
+            <div className="col-md-9">
               <div className="content_container">
                 <ItemList eventsList={posts} />                
               </div>
             </div>
-            <div className="pure-u-1-4">
+            <div className="col-md-3">
               <div id="sidebar">
                 <Search />
                 <Category />

@@ -3,7 +3,7 @@ import {render} from 'react-dom';
 import { Router, Route, browserHistory, IndexRoute} from 'react-router';
 import { Provider } from 'react-redux';
 
-import App from './app';
+import App from './containers/app';
 import Content from './components/content';
 import ItemList from './components/itemList';
 import Archives from './components/archives';
@@ -13,8 +13,8 @@ import Register from './components/register';
 import Post from "./components/post";
 import NoMatch from './components/nomatch';
 
-//引入样式文件
-
+//引入样式和字体文件
+import 'bootstrap/dist/css/bootstrap.css';
 import './style/style.css';
 
 import configureStore from './stores/configureStore';
