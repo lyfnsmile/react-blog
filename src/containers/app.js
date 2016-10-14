@@ -1,14 +1,14 @@
 import React,{Component} from 'react';
 import { connect } from 'react-redux';
 
-import Header from './components/header';
-import Search from './components/search';
-import Tag from './components/tag';
-import Category from './components/category';
-import Footer from './components/footer';
-import ItemList from './components/itemList';
+import Header from '../components/header';
+import Search from '../components/search';
+import Tag from '../components/tag';
+import Category from '../components/category';
+import Footer from '../components/footer';
+import ItemList from '../components/itemList';
 
-import {fetchPostsIfNeeded} from './actions/action'
+import {fetchPostsIfNeeded} from '../actions/action'
 
 //引入样式文件
 class App extends Component {
