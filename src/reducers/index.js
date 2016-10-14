@@ -3,7 +3,6 @@ import { REQUEST_POSTS, RECEIVE_POSTS } from '../actions/action'
 
 //选择用户后，将state.selectedUser设为所选选项
 function selectedUser(state = 'lyfnsmile', action) {
-  console.log(action)
   switch (action.type) {
     case REQUEST_POSTS:
       return action.user

@@ -8,6 +8,8 @@ import Category from './components/category';
 import Footer from './components/footer';
 
 
+import {fetchPostsIfNeeded} from './actions/action'
+
 //引入样式文件
 class App extends Component {
 
@@ -35,14 +37,16 @@ class App extends Component {
 	}
 
   componentDidMount(){
-      
+      console.log(this.props)
+      const {dispatch,selectedUser}=this.props;
+      dispatch(fetchPostsIfNeeded(selectedUser))
   }
 }
 
 
 function mapStateToProps(state) {
-  const { selectedReddit, postsByReddit } = state
-  
+  //const { selectedReddit, postsByReddit } = state
+  return state
 }
 
 export default connect(mapStateToProps)(App)

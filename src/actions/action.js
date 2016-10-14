@@ -24,7 +24,7 @@ function receivePosts(user,json) {
 }
 
 //获取文章，先触发requestPosts开始获取action，完成后触发receivePosts获取成功的action
-function fetchPosts() {
+function fetchPosts(user) {
   return dispatch => {
     dispatch(requestPosts(user))
     return fetch(`https://api.github.com/users/${user}`)

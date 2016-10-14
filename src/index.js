@@ -24,7 +24,6 @@ import configureStore from './stores/configureStore';
 
 let store = configureStore();
 
-console.log(store)
 
 render(	
 	<Provider store={store}>
