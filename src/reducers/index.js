@@ -17,7 +17,7 @@ function posts(state = {}, action) {
       return Object.assign({}, state)
     case RECEIVE_POSTS:
       return Object.assign({}, state, {
-        data: action.posts,
+        data: action.data,
         lastUpdated: action.receivedAt
       })
     default:
@@ -27,7 +27,8 @@ function posts(state = {}, action) {
 
 //将两个reducer合并成一个reducer
 const rootReducer = combineReducers({
-  selectedUser
+  selectedUser,
+  posts
 })
 
 export default rootReducer

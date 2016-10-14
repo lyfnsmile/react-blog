@@ -19,6 +19,7 @@ function receivePosts(user,json) {
   return {
     type: RECEIVE_POSTS,
     user,
+    data:json,
     receivedAt: Date.now()
   }
 }
@@ -27,7 +28,7 @@ function receivePosts(user,json) {
 function fetchPosts(user) {
   return dispatch => {
     dispatch(requestPosts(user))
-    return fetch(`https://api.github.com/users/${user}`)
+    return fetch(`https://api.github.com/users/${user}/events`)
       .then(response => response.json())
       .then(json => dispatch(receivePosts(user, json)))
   }

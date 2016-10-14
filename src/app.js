@@ -13,14 +13,15 @@ import {fetchPostsIfNeeded} from './actions/action'
 //引入样式文件
 class App extends Component {
 
-	render(){		
+	render(){	
+    console.log(this.props)	
 		return (
 			<div>
 				<Header />
         <div id="layout" className="pure-g">
           <div className="pure-u-1 pure-u-md-3-4">
             <div className="content_container">
-    		      {this.props.children}
+    		      {this.props.selectedUser}
         		</div>
         	</div>
         	<div className="pure-u-1-4">
@@ -37,7 +38,6 @@ class App extends Component {
 	}
 
   componentDidMount(){
-      console.log(this.props)
       const {dispatch,selectedUser}=this.props;
       dispatch(fetchPostsIfNeeded(selectedUser))
   }
@@ -45,6 +45,7 @@ class App extends Component {
 
 
 function mapStateToProps(state) {
+  console.log(state)
   //const { selectedReddit, postsByReddit } = state
   return state
 }
