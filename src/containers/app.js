@@ -10,7 +10,7 @@ import ItemList from '../components/itemList';
 
 import {fetchPostsIfNeeded} from '../actions/action'
 
-//引入样式文件
+
 class App extends Component {
 
 	render(){	
@@ -35,8 +35,7 @@ class App extends Component {
           <Footer />
         </div>
       )
-    
-		
+    		
 	}
 
   componentDidMount(){
