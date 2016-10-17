@@ -8,7 +8,7 @@ import Category from '../components/category';
 import Footer from '../components/footer';
 import ItemList from '../components/itemList';
 
-import {fetchPostsIfNeeded} from '../actions/action'
+import {fetchPosts, fetchUser} from '../actions/action'
 
 
 class App extends Component {
@@ -40,7 +40,8 @@ class App extends Component {
 
   componentDidMount(){
       const {dispatch,selectedUser}=this.props
-      dispatch(fetchPostsIfNeeded(selectedUser))
+      dispatch(fetchPosts(selectedUser))
+      dispatch(fetchUser(selectedUser))
   }
 }
 
