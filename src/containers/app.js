@@ -47,13 +47,14 @@ class App extends Component {
 
 
 function mapStateToProps(state) {
-  const { selectedUser, posts } = state
+  const { selectedUser, posts, userInfo } = state
 
   posts.data=posts.data||[]
 
   return {
     selectedUser,
-    posts
+    posts,
+    userInfo
   }
   
 }

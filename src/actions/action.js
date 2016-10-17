@@ -1,6 +1,7 @@
 import fetch from 'isomorphic-fetch'
 
 export const REQUEST_POSTS = 'REQUEST_POSTS'
+export const REQUEST_USER = 'REQUEST_USER'
 export const RECEIVE_POSTS = 'RECEIVE_POSTS'
 export const RECEIVE_USER = 'RECEIVE_USER'
 
@@ -15,22 +16,30 @@ function requestPosts(user) {
     }
 }
 
+//获取user信息
+function requestUser(user) {
+    return {
+        type: REQUEST_USER,
+        user
+    }
+}
+
 //获取新闻成功的action
-function receivePosts(user, json) {
+function receivePosts(user, data) {
     return {
         type: RECEIVE_POSTS,
         user,
-        data: json,
+        data,
         receivedAt: Date.now()
     }
 }
 
 //获取用户信息成功的action
-function receiveUser(user, json) {
+function receiveUser(user, data) {
     return {
         type: RECEIVE_USER,
         user,
-        data: json,
+        data,
         receivedAt: Date.now()
     }
 }
@@ -48,20 +57,9 @@ export function fetchPosts(user) {
 //获取文章，先触发requestPosts开始获取action，完成后触发receiveUser获取成功的action
 export function fetchUser(user) {
     return dispatch => {
-        dispatch(requestPosts(user))
-        return fetch(`http://localhost:3000/getInfo/${user}`, {
-                mode: 'no-cors'
-            }).then(response => response.json())
+        dispatch(requestUser(user))
+        return fetch(`http://localhost:3000/getInfo/${user}`)
+            .then(response => response.json())
             .then(json => dispatch(receiveUser(user, json)))
-    }
-}
-
-
-//如果需要则开始获取文章
-export function fetchPostsIfNeeded(user) {
-    return (dispatch, getState) => {
-        // if (shouldFetchPosts(getState(), reddit)) {
-        return dispatch(fetchPosts(user))
-            // }
     }
 }

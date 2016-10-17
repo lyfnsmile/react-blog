@@ -1,5 +1,5 @@
 import { combineReducers } from 'redux'
-import { REQUEST_POSTS, RECEIVE_POSTS, RECEIVE_USER } from '../actions/action'
+import { REQUEST_POSTS, REQUEST_USER, RECEIVE_POSTS, RECEIVE_USER } from '../actions/action'
 
 //选择用户后，将state.selectedUser设为所选选项
 function selectedUser(state = 'lyfnsmile', action) {
@@ -13,9 +13,12 @@ function selectedUser(state = 'lyfnsmile', action) {
 
 
 // 用户信息数据
-
 function userInfo(state = {}, action) {
     switch (action.type) {
+        case REQUEST_USER:
+            return Object.assign({}, state, {
+                isFetching: true,
+            })
         case RECEIVE_USER:
             return Object.assign({}, state, {
                 isFetching: false,
