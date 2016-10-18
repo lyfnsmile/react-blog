@@ -1,11 +1,11 @@
 import React from 'react';
 import {Link,IndexLink} from 'react-router';
+import Loading from './loading';
 
 class Header extends React.Component {
 
 	render(){
         const {userInfo}=this.props
-        console.log(userInfo.data,349)
 
 		return (
 			<div className="col-md-10 col-md-offset-1">
@@ -19,7 +19,10 @@ class Header extends React.Component {
                         userInfo.data&&
                         <p className="description">{userInfo.data.subTitle}</p>
                     }
-                    
+                    {
+                        !userInfo.data&&
+                        <Loading />
+                    }                    
                 </div>
                 <div id="nav-menu">
                     <IndexLink to="/" activeClassName="current"><i className="glyphicon glyphicon-plus">首页</i></IndexLink>
@@ -33,8 +36,8 @@ class Header extends React.Component {
 	}
 
 	componentDidMount(){
-     
-  }
+      console.log('Component加载完成...')
+    }
 };
 
 export default Header;
