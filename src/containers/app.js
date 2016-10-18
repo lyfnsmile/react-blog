@@ -14,10 +14,11 @@ import {fetchPosts, fetchUser} from '../actions/action'
 class App extends Component {
 
 	render(){	
-    const {posts}=this.props;    
+    const {posts,userInfo}=this.props;   
+     
       return (
         <div>
-          <Header />
+          <Header userInfo={userInfo} />
           <div id="layout" className="pure-g container">
             <div className="col-md-9">
               <div className="content_container">
