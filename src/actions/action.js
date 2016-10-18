@@ -51,6 +51,7 @@ export function fetchPosts(user) {
         return fetch(`${BASIC_URL}/users/${user}/events`)
             .then(response => response.json())
             .then(json => dispatch(receivePosts(user, json)))
+            .catch(err => console.log(err))
     }
 }
 
@@ -61,5 +62,6 @@ export function fetchUser(user) {
         return fetch(`http://localhost:3000/getInfo/${user}`)
             .then(response => response.json())
             .then(json => dispatch(receiveUser(user, json)))
+            .catch(err => console.log(err))
     }
 }
